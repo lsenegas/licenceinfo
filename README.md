@@ -1,0 +1,2 @@
+# licenceinfo
+Projets licence info
