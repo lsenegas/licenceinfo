@@ -18,30 +18,21 @@ void charSequence (string &c, int &n) {
     }
 }
 
-void printOneLine (int &n, string &c1, string &c2) {
-    for (int i = 1; i <= n/2; i++) {
-        charSequence(c1, n);
-        charSequence(c2, n);
-    } if (n%2 != 0) charSequence (c1,n);
-    cout << endl;
+void printBlocLine (int &n, string &c1, string &c2) {
+    for (int i = 0; i < n; i++){
+        for (int i = 1; i <= n/2; i++) {
+            charSequence(c1, n);
+            charSequence(c2, n);
+        } if (n%2 != 0) charSequence (c1,n);
+        cout << endl;
+    }
 }
 
 void checkerboardLayout (int &n, string &c1, string &c2) {
-    for (int i = 0; i < n/2; i++) {
-        for (int j = 1; j <= n/2; j++) {
-            printOneLine(n, c1, c2);
-            printOneLine(n, c1, c2);
-        } if (n%2 != 0) printOneLine(n,c1,c2);
-        
-        for (int j = 1; j <= n/2; j++) {
-            printOneLine(n, c2 ,c1);
-            printOneLine(n, c2 ,c1);
-        } if (n%2 != 0) printOneLine(n,c2,c1);
+    for (int i = 1; i <= n; i++) {
+        (i%2 == 0) ? printBlocLine (n,c2,c1):printBlocLine(n,c1,c2);
     }
-    if (n%2 != 0){
-            for (int i = 0; i < n; i++)
-                printOneLine(n,c1,c2);
-        }
+    if (n%2 != 0) printBlocLine(n,c1,c2);    
 }
 
 int main() {
