@@ -32,7 +32,6 @@ void checkerboardLayout (int &n, string &c1, string &c2) {
     for (int i = 1; i <= n; i++) {
         (i%2 == 0) ? printBlocLine (n,c2,c1):printBlocLine(n,c1,c2);
     }
-    if (n%2 != 0) printBlocLine(n,c1,c2);    
 }
 
 int main() {
